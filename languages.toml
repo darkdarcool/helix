@@ -1,0 +1,31 @@
+[[language]]
+name = "typescript"
+shebangs = ["deno"]
+roots = ["deno.json", "deno.jsonc"]
+file-types = ["js", "ts", "jsx", "tsx"]
+language-servers = ["deno-lsp"]
+auto-format = false
+
+[language-server.deno-lsp]
+command = "deno"
+args = ["lsp"]
+environment = { NO_COLOR = "1" }
+
+[language-server.deno-lsp.config.deno]
+enable = true
+# Uncomment to enable completion of unstable features of Deno
+unstable = true
+lint = true
+# Uncomment to cache dependencies on save
+# cacheOnSave = true
+# Enable completion of importing from registries
+# Enable completion of function calls
+# suggest = { completeFunctionCalls = false, imports = { hosts = { "https://deno.land" = true } } }
+# suggest = { imports = { hosts = { "https://deno.land" = true, "https://crux.land" = true, "https://x.nest.land" = true } } }
+inlayHints.parameterNames.enabled = "all"
+inlayHints.parameterTypes.enabled = true
+
+[[language]]
+name = "markdown"
+formatter = { command = "dprint", args = ["fmt", "--stdin", "md"]}
+auto-format = true

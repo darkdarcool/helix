@@ -1,0 +1,12 @@
+# theme = "catppuccin_mocha"
+theme = "rose_pine_moon"
+
+[editor]
+auto-save = true
+idle-timeout = 500
+
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "bar"
+select =  "underline"
